@@ -12,15 +12,29 @@
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(135deg, #f857a6, #ff5858);
       height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
-      overflow: hidden;
+      background: #fceabb;
+      background-image:
+        radial-gradient(#ff9a9e 2px, transparent 0),
+        radial-gradient(#fad0c4 2px, transparent 0),
+        radial-gradient(#fbc2eb 2px, transparent 0),
+        radial-gradient(#a18cd1 2px, transparent 0),
+        radial-gradient(#f6d365 2px, transparent 0);
+      background-size: 60px 60px;
+      background-position: 0 0, 20px 20px, 40px 40px, 30px 30px, 50px 50px;
+      animation: moveSprinkles 20s linear infinite;
     }
+
+    @keyframes moveSprinkles {
+      0% { background-position: 0 0, 20px 20px, 40px 40px, 30px 30px, 50px 50px; }
+      100% { background-position: 60px 60px, 80px 80px, 100px 100px, 90px 90px, 110px 110px; }
+    }
+
     .container {
-      background: rgba(255, 255, 255, 0.2);
+      background: rgba(255, 255, 255, 0.25);
       padding: 2rem;
       border-radius: 2rem;
       box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
@@ -30,6 +44,7 @@
       border: 1px solid rgba(255, 255, 255, 0.3);
       animation: fadeIn 1s ease-in-out;
     }
+
     .mode-switch {
       display: flex;
       justify-content: space-between;
@@ -53,12 +68,14 @@
       color: white;
       transform: scale(1.05);
     }
+
     .timer {
       font-size: 4rem;
       margin-bottom: 1.5rem;
       color: #fff;
       text-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
     }
+
     .controls button {
       margin: 0.3rem;
       padding: 0.6rem 1.4rem;
